@@ -59,13 +59,26 @@ The check depends only on `bash` and `awk`, both standard on the monitoring host
 dark viewing. The notebook reads a temperature logger file from the local, ignored
 `data/` directory and writes its figures to the ignored `output/` directory.
 
+## Command-line analysis
+
+`temperature_analysis.py` is a standalone version of the notebook for a machine
+without Jupyter. It installs anything it needs, finds the logger file
+automatically (a single `.csv` or `.xlsx` beside it or in `data/`, or a path given
+as an argument), and writes the same figures plus a `report.txt` into `output/`.
+
+```bash
+python temperature_analysis.py                    # auto-detect the logger file
+python temperature_analysis.py path/to/file.csv   # or use a specific file
+```
+
 ## Repository layout
 
 ```
-check_temp.sh    the Nagios check
-notebook.ipynb   the analysis notebook
-notebook.html    rendered analysis for sharing
-README.md        this file
-data/            local logger data (git-ignored)
-output/          generated figures (git-ignored)
+check_temp.sh            the Nagios check
+temperature_analysis.py  command-line version of the notebook (no Jupyter needed)
+notebook.ipynb           the analysis notebook
+notebook.html            rendered analysis for sharing
+README.md                this file
+data/                    local logger data (git-ignored)
+output/                  generated figures (git-ignored)
 ```
