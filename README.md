@@ -21,10 +21,14 @@ Three years of readings showed this happening about 770 times, most of them brie
 
 The check calms this in two ways, both chosen from the data:
 
-- **Hysteresis:** it warns above 26 C but only sounds the all-clear once the number
-  drops below 25 C, so a small wobble no longer switches the alert on and off.
-- **Persistence:** it requires two readings in a row above a limit before alerting,
-  so a single odd reading is ignored.
+- **Hysteresis (a gap between switching on and off):** the alarm switches on when
+  the temperature rises above 26 C. Once on, it does not switch off the instant the
+  temperature dips back under 26; like a thermostat, it stays on until the
+  temperature falls below 25 C. That deliberate gap between the on point (26) and
+  the off point (25) is what stops the alarm flickering on and off while the
+  temperature hovers around the limit.
+- **Persistence (waiting for a second reading):** the alarm requires two readings in
+  a row above a limit before it fires, so a single odd reading on its own is ignored.
 
 Together these remove about 86 percent of the alert emails while still raising every
 genuinely long, hot spell. The full analysis, with charts, is in the notebook.
