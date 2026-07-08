@@ -60,8 +60,8 @@ The check depends only on `bash` and `awk`, both standard on the monitoring host
 
 `notebook.ipynb` builds the full understanding and justifies every setting above.
 `notebook.html` is a rendered copy that opens in any browser and adapts to light or
-dark viewing. The notebook reads a temperature logger file from the local, ignored
-`data/` directory and writes its figures to the ignored `output/` directory.
+dark viewing. The notebook reads a temperature logger file from the local,
+git-ignored `data/` directory and writes its figures to the `output/` directory.
 
 ## Command-line analysis
 
@@ -84,5 +84,5 @@ notebook.ipynb           the analysis notebook
 notebook.html            rendered analysis for sharing
 README.md                this file
 data/                    local logger data (git-ignored)
-output/                  generated figures (git-ignored)
+output/                  generated figures and report
 ```
